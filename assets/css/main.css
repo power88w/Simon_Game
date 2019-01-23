@@ -24,14 +24,15 @@ section div.container-fluid {
 }
 
 .row .colors {
-  height: 50%;
+  height: 60%;
   background-color: black;
   padding: 8% 8% 8% 8%;
 }
 
 .buttons {
   height: 50%;
-  background-color: blue;
+  background-color: black;
+  padding-top: 8%;
 }
 
 .colors .colors-green {
@@ -72,5 +73,31 @@ section div.container-fluid {
   padding: 0 0 0 0;
   margin-top: 3%;
   float: left;
+}
+
+.switch-power-box {
+  float: left;
+  width: 50%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.switch-power-strict {
+  float: left;
+  width: 50%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+#count {
+  font-size: 80px;
+  color: white;
+  text-align: center;
 }
 /*# sourceMappingURL=main.css.map */

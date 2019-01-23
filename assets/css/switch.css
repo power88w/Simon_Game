@@ -3,19 +3,7 @@
 *:after {
   box-sizing: border-box;
 }
-body {
-  font-family: "Open Sans";
-  font-weight: 300;
-  margin: 2rem;
-  background: #4a4a4a;
-  -webkit-backface-visibility: hidden;
-}
-h1 {
-  text-align: center;
-  color: #fff;
-  font-weight: 300;
-  margin-bottom: 4rem;
-}
+
 .switch {
   margin: 4rem auto;
 }
@@ -60,20 +48,20 @@ h1 {
   position: absolute;
   transition: 0.25s ease all;
 }
-.switch--horizontal {
+.power-switch {
   width: 18rem;
   height: 3rem;
   margin: 0 auto;
   font-size: 0;
   margin-bottom: 1rem;
 }
-.switch--horizontal input {
+.power-switch input {
   height: 3rem;
   width: 6rem;
   left: 6rem;
   margin: 0;
 }
-.switch--horizontal label {
+.power-switch label {
   font-size: 1.5rem;
   line-height: 3rem;
   display: inline-block;
@@ -82,36 +70,36 @@ h1 {
   margin: 0;
   text-align: center;
 }
-.switch--horizontal label:last-of-type {
+.power-switch label:last-of-type {
   margin-left: 6rem;
 }
-.switch--horizontal .toggle-outside {
+.power-switch .toggle-outside {
   background: #fff;
   position: absolute;
   width: 6rem;
   left: 6rem;
 }
-.switch--horizontal .toggle-inside {
+.power-switch .toggle-inside {
   height: 2.5rem;
   width: 2.5rem;
 }
-.switch--horizontal input:checked ~ .toggle-outside .toggle-inside {
+.power-switch input:checked ~ .toggle-outside .toggle-inside {
   left: 0.25rem;
 }
-.switch--horizontal input ~ input:checked ~ .toggle-outside .toggle-inside {
+.power-switch input ~ input:checked ~ .toggle-outside .toggle-inside {
   left: 3.25rem;
 }
-.switch--no-label.switch--horizontal {
+.switch--no-label.power-switch {
   width: 6rem;
 }
-.switch--no-label.switch--horizontal input,
-.switch--no-label.switch--horizontal .toggle-outside {
+.switch--no-label.power-switch input,
+.switch--no-label.power-switch .toggle-outside {
   left: 0;
 }
-.switch--expanding-inner.switch--horizontal input:hover ~ .toggle-outside .toggle-inside {
+.switch--expanding-inner.power-switch input:hover ~ .toggle-outside .toggle-inside {
   width: 3.5rem;
 }
-.switch--expanding-inner.switch--horizontal input:hover ~ input:checked ~ .toggle-outside .toggle-inside {
+.switch--expanding-inner.power-switch input:hover ~ input:checked ~ .toggle-outside .toggle-inside {
   left: 2.25rem;
 }
 
