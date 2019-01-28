@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/switch.css">
+    <audio id="clip1">
+        <source src="assets/sounds/blue.mp3"></source>
+    </audio>
     <title>Simon game</title>
 </head>
 <body>
@@ -14,10 +17,10 @@
         <div class="container-fluid">
             <div class="row simon-box">
                 <div class="colors col-md-12">
-                    <div class="colors-green"></div>
-                    <div class="colors-red"></div>
-                    <div class="colors-yellow"></div>
-                    <div class="colors-blue"></div>
+                    <div id="colors-green"></div>
+                    <div id="colors-red"></div>
+                    <div id="colors-yellow"></div>
+                    <div id="colors-blue"></div>
                 </div>
                 <div class="buttons col-md-12">
                     <div class="switch-box">
@@ -26,7 +29,7 @@
                             <div class="switch-a switch power-switch">
                                 <input id="power_button_off" type="checkbox" name="first-switch" checked="checked">
                                 <label for="power_button_off">Off</label>
-                                <input id="power_button" type="checkbox" name="first-switch" checked="checked">
+                                <input id="power_button" type="checkbox" name="first-switch">
                                 <label for="power_button">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
                             </div>
                         </div>
@@ -35,11 +38,11 @@
                             <div class="switch-b switch power-switch">
                                 <input id="strict_button_off" type="checkbox" name="second-switch" checked="checked">
                                 <label for="strict_button_off">Off</label>
-                                <input id="strict_button" type="checkbox" name="second-switch" checked="checked">
+                                <input id="strict_button" type="checkbox" name="second-switch">
                                 <label for="strict_button">On</label><span class="toggle-outside"><span class="toggle-inside"></span></span>
                             </div>
                         </div> 
-                        <div id="count"></div>   
+                        <div id="count">--</div>   
                     </div>
                     <div class="colors-blue"></div>
                 </div>
