@@ -40,9 +40,9 @@ powerButton.addEventListener('click', function powerMe(event) {
 // ---   if (on || win)
 //---- play();
 
-var simonOrder = [];
+var simon = [];
 var playerOrder = [];
-var brightenColor;
+var flashColor;
 var turn;
 var sukcess;
 
@@ -50,7 +50,7 @@ function startGame() {
     win = false;
     order = [];
     playerOrder = [];
-    brightenColor = 0;
+    flashColor = 0;
     timeStamp = 0;
     turn = 1;
     counterOn.innerHTML = 1;
@@ -59,10 +59,39 @@ function startGame() {
         var rand = Math.random();
         rand4 = rand * 4;
         order.push(Math.floor(rand4)+1);
+        console.log(order);
     }
-    simonOrder = true;
+
+    simon = true;
     timeStamp = setInterval(gameTurn, 800);
 }
+
+
+function gameTurn() {
+    power = false;
+  
+    if (flashColor == turn) {
+      clearInterval(timeStamp);
+      simon = false;
+      power = true;
+    }
+
+    if (simon) {
+      setTimeout(function colors() {
+        if (order[flashColor] == 1) console.log("green");
+        if (order[flashColor] == 2) console.log("red");
+        if (order[flashColor] == 3) console.log("yellow");
+        if (order[flashColor] == 4) console.log("blue");
+        flashColor++;
+      }, 200);
+      
+    }
+}
+
+
+
+
+
 
 
 
