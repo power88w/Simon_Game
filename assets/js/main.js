@@ -102,13 +102,9 @@ var blue = document.getElementById("colors-blue");
 
 function clearColor() {
     green.style.backgroundColor = "green";
-    console.log("green");
     red.style.backgroundColor = "darkred";
-    console.log("red");
     yellow.style.backgroundColor = "orange";
-    console.log("yellow");
     blue.style.backgroundColor = "blue";
-    console.log("blue");
 }
 
 function flash() {
