@@ -73,20 +73,131 @@ function gameTurn() {
     if (flashColor == turn) {
       clearInterval(timeStamp);
       simon = false;
+      clearColor();
       power = true;
     }
 
     if (simon) {
+      clearColor();
       setTimeout(function colors() {
-        if (order[flashColor] == 1) console.log("green");
-        if (order[flashColor] == 2) console.log("red");
-        if (order[flashColor] == 3) console.log("yellow");
-        if (order[flashColor] == 4) console.log("blue");
+        if (order[flashColor] == 1) greenLight();
+        if (order[flashColor] == 2) redLight();
+        if (order[flashColor] == 3) yellowLight();
+        if (order[flashColor] == 4) blueLight();
         flashColor++;
       }, 200);
-      
     }
 }
+
+var audio1 = new Audio(
+    '../assets/sounds/green.wav');
+
+var sounds = true;
+
+
+var green = document.getElementById("colors-green");
+var red = document.getElementById("colors-red");
+var yellow = document.getElementById("colors-yellow"); 
+var blue = document.getElementById("colors-blue"); 
+
+function clearColor() {
+    green.style.backgroundColor = "green";
+    red.style.backgroundColor = "darkred";
+    yellow.style.backgroundColor = "orange";
+    blue.style.backgroundColor = "blue";
+}
+
+function flash() {
+    green.style.backgroundColor = "lightgreen";
+    red.style.backgroundColor = "orangered";
+    yellow.style.backgroundColor = "greenyellow";
+    blue.style.backgroundColor = "royalblue";
+}
+
+
+
+
+function greenLight() {
+    if(sounds) {
+        audio1.play();
+    }
+    sounds = true;
+    green.style.background ="lightgreen";
+}
+function redLight() {
+    if(sounds) {
+        audio1.play();
+    }
+    sounds = true;
+    red.style.background ="orangered";
+}
+function yellowLight() {
+    if(sounds) {
+        audio1.play();
+    }
+    sounds = true;
+    yellow.style.background ="greenyellow";
+}
+function blueLight() {
+    if(sounds) {
+        audio1.play();
+    }
+    sounds = true;
+    blue.style.backgroundColor ="royalblue";
+}
+
+function resColor() {
+    setTimeout(function res() {
+        clearColor();
+    },200)
+}
+
+
+
+green.addEventListener('click', (event) => {
+    if (power) {
+        playerOrder.push(1);
+        check();
+        greenLight();
+        if(!win) {
+            resColor();
+        }
+    }    
+})
+
+red.addEventListener('click', (event) => {
+    if (power) {
+        playerOrder.push(2);
+        check();
+        redLight();
+        if(!win) {
+            resColor();
+        }
+    }    
+})
+
+yellow.addEventListener('click', (event) => {
+    if (power) {
+        playerOrder.push(3);
+        check();
+        yellowLight();
+        if(!win) {
+            resColor();
+        }
+    }    
+})
+
+
+blue.addEventListener('click', (event) => {
+    if (power) { 
+        playerOrder.push(4);
+        check();
+        blueLight();
+        if(!win) {
+            resColor();
+        }
+    }    
+})
 
 
 
