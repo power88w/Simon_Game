@@ -90,7 +90,7 @@ function gameTurn() {
 }
 
 var audio1 = new Audio(
-    '../assets/sound/red.mp3');
+    '../assets/sounds/red.mp3');
 
 var sounds = true;
 
