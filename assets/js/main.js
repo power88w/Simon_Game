@@ -91,6 +91,7 @@ function gameTurn() {
 
 var audio1 = new Audio(
     '../assets/sounds/red.mp3');
+    
 
 var sounds = true;
 
