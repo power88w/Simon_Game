@@ -123,21 +123,21 @@ function greenLight() {
         audio1.play();
     }
     sounds = true;
-    green.style.background ="lightgreen";
+    green.style.backgroundColor ="lightgreen";
 }
 function redLight() {
     if(sounds) {
         audio1.play();
     }
     sounds = true;
-    red.style.background ="orangered";
+    red.style.backgroundColor ="orangered";
 }
 function yellowLight() {
     if(sounds) {
         audio1.play();
     }
     sounds = true;
-    yellow.style.background ="greenyellow";
+    yellow.style.backgroundColor ="greenyellow";
 }
 function blueLight() {
     if(sounds) {
