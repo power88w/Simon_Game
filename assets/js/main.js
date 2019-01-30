@@ -102,9 +102,13 @@ var blue = document.getElementById("colors-blue");
 
 function clearColor() {
     green.style.backgroundColor = "green";
+    console.log("green");
     red.style.backgroundColor = "darkred";
+    console.log("red");
     yellow.style.backgroundColor = "orange";
+    console.log("yellow");
     blue.style.backgroundColor = "blue";
+    console.log("blue");
 }
 
 function flash() {
@@ -198,6 +202,65 @@ blue.addEventListener('click', (event) => {
         }
     }    
 })
+
+
+function gameTyp() {
+    simon = true;
+    flashColor = 0;
+    playerOrder = [];
+    timeStamp = setInterval(gameTurn, 1000);
+}
+
+
+function check() {
+    if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
+      sukcess = false;
+  
+    if (playerOrder.length == 20 && sukcess) {
+      winGame();
+    }
+  
+    if (sukcess == false) {
+      flash();
+      counterOn.innerHTML = "WRONG!";
+      setTimeout(function timeout() {
+        counterOn.innerHTML = turn;
+        clearColor();
+  
+        if (strict) {
+          startGame();
+        } else {
+            gameTyp();  
+            sukcess = true;
+        }
+      }, 800);
+  
+      sounds = false;
+    }
+  
+    if (turn == playerOrder.length && sukcess && !win) {
+      turn++;
+      gameTyp();
+      counterOn.innerHTML = turn;
+    }
+  
+  }
+  
+function winGame() {
+    flash();
+    counterOn.innerHTML = "WIN ;-)";
+    on = false;
+    win = true;
+}
+
+
+
+
+
+
+
+
+
 
 
 
