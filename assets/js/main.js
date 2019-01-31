@@ -1,6 +1,4 @@
 
-//-- strict mode --/
-
 var strict = false;
 
 var strictButton = document.querySelector("#strict_button")
@@ -9,18 +7,16 @@ strictButton.addEventListener('click', function strictMe(event)
 {
     if(strictButton.checked == true) {
         strict = true;
-        console.log("ok");
     } else {
         strict = false;
-        console.log("off");
     }
 });
 
-//---power---/
 var power = false;
 var powerButton = document.querySelector("#power_button")
 var counterOn = document.querySelector("#count")
 let timeStamp;
+
 
 
 
@@ -32,13 +28,9 @@ powerButton.addEventListener('click', function powerMe(event) {
     } else  {
         power = false;
         counterOn.innerHTML = "--";
-        //--clearColor();    // czyszczenie kolorow-----/
-        clearInterval(timeStamp);  //---ustawianie intervalow ----/
+        clearInterval(timeStamp);
     }
 });
-
-// ---   if (on || win)
-//---- play();
 
 var simon = [];
 var playerOrder = [];
@@ -48,23 +40,30 @@ var sukcess;
 
 function startGame() {
     win = false;
-    order = [];
     playerOrder = [];
     flashColor = 0;
     timeStamp = 0;
     turn = 1;
     counterOn.innerHTML = 1;
     sukcess = true;
-    for (var i = 0; i < 20; i++) {
-        var rand = Math.random();
-        rand4 = rand * 4;
-        order.push(Math.floor(rand4)+1);
-        console.log(order);
-    }
-
     simon = true;
     timeStamp = setInterval(gameTurn, 800);
+    order = generateRandomNumbers(20);
+
 }
+
+function generateRandomNumbers(length){
+    let order = [];
+    for (let i = 0; i < length; i++) {
+        let rand = Math.random();
+        order.push(Math.floor(rand * 4)+1);
+    }
+    console.log(order);
+    return order;
+}
+
+
+
 
 
 function gameTurn() {
@@ -89,8 +88,7 @@ function gameTurn() {
     }
 }
 
-var audio1 = new Audio(
-    '../assets/sounds/red.mp3');
+var audio1 = new Audio('../assets/sounds/red.mp3');
     
 
 var sounds = true;
@@ -150,9 +148,8 @@ function blueLight() {
 function resColor() {
     setTimeout(function res() {
         clearColor();
-    },200)
+    },300)
 }
-
 
 
 green.addEventListener('click', (event) => {
@@ -217,7 +214,7 @@ function check() {
       winGame();
     }
   
-    if (sukcess == false) {
+    if (!sukcess) {
       flash();
       counterOn.innerHTML = "WRONG!";
       setTimeout(function timeout() {
