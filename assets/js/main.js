@@ -67,14 +67,12 @@ function generateRandomNumbers() {
 
 function gameTurn() {
     power = false;
-
     if (flashColor == turn) {
         clearInterval(timeStamp);
         simon = false;
         clearColor();
         power = true;
     }
-
     if (simon) {
         clearColor();
         setTimeout(function colors() {
@@ -132,7 +130,6 @@ function resColor() {
     }, 200)
 }
 
-
 green.addEventListener('click', (event) => {
     if (power) {
         playerOrder.push(1);
@@ -165,7 +162,6 @@ yellow.addEventListener('click', (event) => {
         }
     }
 })
-
 
 blue.addEventListener('click', (event) => {
     if (power) {
@@ -207,17 +203,14 @@ function check() {
                 sukcess = true;
                 clearColor();
             }
-        }, 800);
-
+        }, 800);d
         sounds = false;
     }
-
     if (turn == playerOrder.length && sukcess && !win) {
         turn++;
         gameTyp();
         counterOn.innerHTML = turn;
     }
-
 }
 
 function winGame() {
