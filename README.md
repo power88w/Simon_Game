@@ -11,9 +11,6 @@ of computer programming. Simon was launched in 1978 at Studio 54 in New York Cit
 becoming a pop culture symbol of the 1970s and 1980s.
 
 
-###
-
-![overview](https://power88w.github.io/Centric_Frontend_project/images/main-overview.JPG)
  
 # UX
 
@@ -34,7 +31,7 @@ The first concept has been slightly changed.
 
 ###
 
-![Wireframe](https://power88w.github.io/Simon_Project2/images/wireframe.JPG)
+![Wireframe](https://power88w.github.io/Simon_project2/assets/images/wireframe.JPG)
 
 
 
