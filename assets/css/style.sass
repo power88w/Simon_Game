@@ -1,7 +1,7 @@
 /*---colors-----*/
 html body 
   background-color: #1A1713
-  font-family: "Open Sans"
+  font-family: 'Audiowide', cursive
   font-weight: 300
   -webkit-backface-visibility: hidden
 
@@ -12,22 +12,27 @@ section div.container-fluid
   justify-content:center
   background-color: #1A1713
   height: 70vh
-  margin: 0 auto;
   min-width: 420px
   max-width: 640px
 
+.container-fluid .simon-box
+  margin: 0 auto
 
 .row .colors 
-  height: 400px
-  width: 375px
+  height: 50vh
+  max-height: 400px
+  width: 395px
   background-color: black
-  padding: 8% 8% 8% 8%
+  padding: 5% 5% 5% 5%
+  margin: 0 auto
 
 .buttons 
-  height: 350px
-  width: 375px
+  height: 50vh
+  width: 395px
+  max-height: 400px
   background-color: black
-  padding-top: 8%
+  padding-top: 2%
+  margin: 0 auto
 
 .colors #colors-green
   height: 47%
@@ -72,31 +77,43 @@ section div.container-fluid
   width: 50%
   margin-top: 20px
   text-align: center
-  font-size: 18px
+  font-size: 22px
   color: white
   margin-bottom: 20px
+
 .switch-power-strict
   float: left
   width: 50%
   margin-top: 20px
   text-align: center
-  font-size: 18px
+  font-size: 22px
   color: white
   margin-bottom: 20px
+
 #count
-  font-size: 80px
+  font-size: 50px
   color: white
   text-align: center
 
-@media (min-width: 576px)
-    #logo-box 
-        display: none
+#title
+  font-size: 30px
+  color: white
+  text-align: center 
+  padding-top: 15% 
 
-
-
-
+@media (max-width: 600px)
+  section .container-fluid 
+    padding: 0
+    background-color: black
+  html body 
+    background-color: black
+  .container-fluid .row
+    background-color: black 
+    margin: 0 0 0 0 
+  .row .colors
+    width: 100%
+    padding: 7% 7% 7% 7%
+  .buttons 
+    width: 100%
   
-  
- 
 
-    

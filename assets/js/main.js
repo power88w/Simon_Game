@@ -121,7 +121,7 @@ function blueLight() {
         blueSound.play();
     }
     sounds = true;
-    blue.style.backgroundColor = "royalblue";
+    blue.style.backgroundColor = "cornflowerblue";
 }
 
 function resColor() {
