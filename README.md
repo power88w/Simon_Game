@@ -14,15 +14,15 @@ becoming a pop culture symbol of the 1970s and 1980s.
  
 # UX
 
-•	User Story: I turn on the Simon game with on button.
-•	User Story: Select game mode.
-•	User Story: I start the game with the start button.
-•	User Story: A particular color is highlighted with sound.
-•	User Story: I must press the highlighted color in the correct order.
-•	User Story: In the next round another color comes to the queue.
-•	User Story: If I make a mistake, I must repeat the round. (With [strict mode], I start the game from the beginning).
-•	User Story: The round number appears on the display.
-•	User Story: I can only win the game if I repeat all 20 steps correctly.
+- User Story: I turn on the Simon game with on button.
+- User Story: Select game mode.
+- User Story: I start the game with the start button.
+- User Story: A particular color is highlighted with sound.
+- User Story: I must press the highlighted color in the correct order.
+- User Story: In the next round another color comes to the queue.
+- User Story: If I make a mistake, I must repeat the round. (With [strict mode], I start the game from the beginning).
+- User Story: The round number appears on the display.
+- User Story: I can only win the game if I repeat all 20 steps correctly.
 
 
 ### Wireframe
