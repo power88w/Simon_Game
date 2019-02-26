@@ -30,7 +30,7 @@ The first concept has been slightly changed.
 
 ###
 
-![Wireframe](https://power88w.github.io/Simon_project2/assets/images/wireframe.JPG)
+![Wireframe](https://power88w.github.io/Simon_Game/assets/images/wireframe.JPG)
 
 
 
@@ -40,9 +40,6 @@ The first concept has been slightly changed.
 - strict button: change the game mode
 - 4 colored buttons connected with sound
 - counter
-
-### Features Left to Implement
-- multipoint marking on maps
 
 
 ## Technologies Used
@@ -99,10 +96,10 @@ Jasmine: Set up a Jasmine Testing folder for:
 ## Deployment
 
 ```md
- git clone https://github.com/power88w/Simon_project2.git
+ git clone https://github.com/power88w/Simon_Game.git
 ```
 
-(https://power88w.github.io/Simon_project2/)
+(https://power88w.github.io/Simon_Game/)
 
 
 
