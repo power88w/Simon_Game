@@ -10,7 +10,6 @@ Kapps, who taught computer science at Temple University and also wrote one of th
 of computer programming. Simon was launched in 1978 at Studio 54 in New York City and was an immediate success, 
 becoming a pop culture symbol of the 1970s and 1980s.
 
-
  
 # UX
 
@@ -37,15 +36,10 @@ The first concept has been slightly changed.
 
 ## Features
 
-- logo as a reference link to the main page.
-- Navigation bar with a drop down menu.
-- buttons with a hover.
-- website is a mobile ready version with hamburger menu.
-- several photos
-- the website has photo gallery.
-- google maps.
-- easy access to the social media
- 
+- power button: turns on and off the game
+- strict button: change the game mode
+- 4 colored buttons connected with sound
+- counter
 
 ### Features Left to Implement
 - multipoint marking on maps
@@ -57,6 +51,8 @@ The first concept has been slightly changed.
 - HTML5 - used to create a website structure 
 
 - SASS - used to stylize Html
+
+- Javascript - used for the logic of the game
 
 - [Bootstrap3.3.7](https://getbootstrap.com/docs/3.3/getting-started/) - allows displaying the website in different resolutions
 
@@ -70,9 +66,10 @@ The first concept has been slightly changed.
 
 # Testing
 
-While testing the game I found the following problems:
-
--  if you keep pressing the colors after a mistake, hang game.
+Jasmine: Set up a Jasmine Testing folder for:
+- Test that two calls to the function will return random numbers (the arrays will not be equal)
+- Test that the function will return an array with a certain length (same length passed in as argument)
+- Test that the content of the array is between one and four (max is not greater than 4)
 
 ## Browsers - used for testing.
 
