@@ -1,13 +1,13 @@
-let strict = false;
-let power = false;
-let timeStamp;
-let simon = [];
-let playerOrder = [];
-let flashColor;
-let turn;
-let sukcess;
-let sounds = true;
-let order;
+var strict = false;
+var power = false;
+var timeStamp;
+var simon = [];
+var playerOrder = [];
+var flashColor;
+var turn;
+var sukcess;
+var sounds = true;
+var order;
 
 const greenSound = new Audio('assets/sounds/green.wav');
 const redSound = new Audio('assets/sounds/red.wav')
@@ -22,7 +22,7 @@ const blue = document.getElementById("colors-blue");
 const strictButton = document.querySelector("#strict_button");
 
 strictButton.addEventListener('click', function strictMe(event) {
-    if (strictButton.checked == true) {
+    if (strictButton.checked === true) {
         strict = true;
     } else {
         strict = false;
@@ -51,7 +51,7 @@ function startGame() {
     counterOn.innerHTML = 1;
     sukcess = true;
     simon = true;
-    timeStamp = setInterval(gameTurn, 800);
+    timeStamp = setInterval(gameTurn, 1000);
     order = generateRandomNumbers(20);
 
 }
@@ -65,10 +65,17 @@ function generateRandomNumbers() {
     return order;
 }
 
+function light(color, sound, coloredit) {
+    if (sounds) {
+        sound.play();
+    }
+    sounds = true;
+    color.style.backgroundColor = coloredit;
+}
 
 function gameTurn() {
     power = false;
-    if (flashColor == turn) {
+    if (flashColor === turn) {
         clearInterval(timeStamp);
         simon = false;
         clearColor();
@@ -77,13 +84,35 @@ function gameTurn() {
     if (simon) {
         clearColor();
         setTimeout(function colors() {
-            if (order[flashColor] == 1) greenLight();
-            if (order[flashColor] == 2) redLight();
-            if (order[flashColor] == 3) yellowLight();
-            if (order[flashColor] == 4) blueLight();
+            if (order[flashColor] == 1) light(green, greenSound, "lightgreen");
+            if (order[flashColor] == 2) light(red, redSound, "lightgreen");
+            if (order[flashColor] == 3) light(yellow, yellowSound, "lightgreen");
+            if (order[flashColor] == 4) light(blue, blueSound, "lightgreen");
             flashColor++;
         }, 280);
     }
+}
+
+var colors = [green, red, yellow, blue];
+
+colors.forEach((color, code) => {
+    addListener(color, code + 1)
+});
+
+function addListener(color, code) {
+    color.addEventListener('click', (event) => {
+        if (power) {
+            playerOrder.push(code);
+            check();
+            if (code == 1) light(green, greenSound, "lightgreen");
+            if (code == 2) light(red, redSound, "lightgreen");
+            if (code == 3) light(yellow, yellowSound, "lightgreen");
+            if (code == 4) light(blue, blueSound, "lightgreen");
+            if (!win) {
+                resColor();
+            }
+        }
+    })
 }
 
 function clearColor() {
@@ -93,38 +122,6 @@ function clearColor() {
     blue.style.backgroundColor = "blue";
 }
 
-function greenLight() {
-    if (sounds) {
-        greenSound.play();
-    }
-    sounds = true;
-    green.style.backgroundColor = "lightgreen";
-}
-
-function redLight() {
-    if (sounds) {
-        redSound.play();
-    }
-    sounds = true;
-    red.style.backgroundColor = "orangered";
-}
-
-function yellowLight() {
-    if (sounds) {
-        yellowSound.play();
-    }
-    sounds = true;
-    yellow.style.backgroundColor = "greenyellow";
-}
-
-function blueLight() {
-    if (sounds) {
-        blueSound.play();
-    }
-    sounds = true;
-    blue.style.backgroundColor = "cornflowerblue";
-}
-
 function resColor() {
     setTimeout(function res() {
         clearColor();
@@ -132,59 +129,13 @@ function resColor() {
 }
 
 
-
-green.addEventListener('click', (event) => {
-    if (power) {
-        playerOrder.push(1);
-        check();
-        greenLight();
-        if (!win) {
-            resColor();
-        }
-    }
-})
-
-red.addEventListener('click', (event) => {
-    if (power) {
-        playerOrder.push(2);
-        check();
-        redLight();
-        if (!win) {
-            resColor();
-        }
-    }
-})
-
-yellow.addEventListener('click', (event) => {
-    if (power) {
-        playerOrder.push(3);
-        check();
-        yellowLight();
-        if (!win) {
-            resColor();
-        }
-    }
-})
-
-blue.addEventListener('click', (event) => {
-    if (power) {
-        playerOrder.push(4);
-        check();
-        blueLight();
-        if (!win) {
-            resColor();
-        }
-    }
-})
-
 function gameTyp() {
     simon = true;
     flashColor = 0;
     playerOrder = [];
     power = false;
-    timeStamp = setInterval(gameTurn, 800);
+    timeStamp = setInterval(gameTurn, 900);
 }
-
 
 function check() {
     if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
@@ -222,3 +173,4 @@ function winGame() {
     on = false;
     win = true;
 }
+
