@@ -7,11 +7,12 @@ let flashColor;
 let turn;
 let sukcess;
 let sounds = true;
+let order;
 
-const greenSound = document.querySelector("#greens");
-const redSound = document.querySelector("#reds");
-const blueSound = document.querySelector("#blues");
-const yellowSound = document.querySelector("#yellows");
+const greenSound = new Audio('assets/sounds/green.wav');
+const redSound = new Audio('assets/sounds/red.wav')
+const blueSound = new Audio('assets/sounds/blue.wav')
+const yellowSound = new Audio('assets/sounds/yellow.wav');
 const powerButton = document.querySelector("#power_button");
 const counterOn = document.querySelector("#count");
 const green = document.getElementById("colors-green");
@@ -50,7 +51,7 @@ function startGame() {
     counterOn.innerHTML = 1;
     sukcess = true;
     simon = true;
-    timeStamp = setInterval(gameTurn, 600);
+    timeStamp = setInterval(gameTurn, 800);
     order = generateRandomNumbers(20);
 
 }
@@ -81,7 +82,7 @@ function gameTurn() {
             if (order[flashColor] == 3) yellowLight();
             if (order[flashColor] == 4) blueLight();
             flashColor++;
-        }, 200);
+        }, 280);
     }
 }
 
@@ -129,6 +130,8 @@ function resColor() {
         clearColor();
     }, 200)
 }
+
+
 
 green.addEventListener('click', (event) => {
     if (power) {
@@ -178,6 +181,7 @@ function gameTyp() {
     simon = true;
     flashColor = 0;
     playerOrder = [];
+    power = false;
     timeStamp = setInterval(gameTurn, 800);
 }
 
@@ -189,8 +193,8 @@ function check() {
     if (playerOrder.length == 20 && sukcess) {
         winGame();
     }
-
     if (!sukcess) {
+        power = false;
         counterOn.innerHTML = "WRONG!";
         setTimeout(function timeout() {
             counterOn.innerHTML = turn;
@@ -203,7 +207,7 @@ function check() {
                 sukcess = true;
                 clearColor();
             }
-        }, 800);d
+        }, 800);
         sounds = false;
     }
     if (turn == playerOrder.length && sukcess && !win) {

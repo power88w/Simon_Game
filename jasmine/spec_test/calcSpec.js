@@ -1,39 +1,24 @@
+describe('generateRandomNumbers', () =>{
 
-describe('ArrayLength', () =>{
-    var test = generateRandomNumbers();
-    it('should return an array with 20 character', () => {
+  it('should return an array with 20 character', () => {
+      var test = generateRandomNumbers();
       expect( test.length ).toEqual(20);
-    });
-});
+  });
 
+  it('calls to the function twice return different arrays', () => {
+      var randomNumbers1 = generateRandomNumbers();
 
-describe('TwoRandomNumbers', () =>{
-    var test = generateRandomNumbers();
-    var total = 0;
-    for(var i in test) { total += test[i]; }
-    var test2 = generateRandomNumbers2();
-    var total2 = 0;
-    for(var i in test2) { total2 += test2[i]; }
-    it('two functions should return different numbers', () => {
-      expect(total).not.toEqual(total2);
-    });
-});
+      var randomNumbers2 = generateRandomNumbers();
 
+      expect(randomNumbers1).not.toEqual(randomNumbers2);
+  });
 
-describe('NotMoreThan4', () =>{
-    var test = generateRandomNumbers();
-    var total = 0;
-    for(var i in test) { total += test[i]; }
-    var test2 = total / test.length;
-    function check(test2) {
-        if (test2 <= 4) {
-          return true;
-        }
-          return false;
-      }
-    it('should return numbers under or equal 4', () => {
-      expect(check(test2)).toBeTruthy();
-    });
+  it('should return numbers under or equal 4', () => {
+      var randomNumbers = generateRandomNumbers();
+
+      var highestNumber = Math.max(...randomNumbers)
+      expect(highestNumber).toBeLessThanOrEqual(4);
+  });
 });
 
 
